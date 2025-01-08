@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class PatrolingEnemy : Character
@@ -22,7 +18,7 @@ public class PatrolingEnemy : Character
 
     int patrolIndex;
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
         initialPosition = transform.position;
         if(partolLocations.Length > 1)
@@ -32,7 +28,7 @@ public class PatrolingEnemy : Character
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         UpdateLocation();
     }
@@ -48,7 +44,7 @@ public class PatrolingEnemy : Character
         {
             timeCount = 0;
             patrolIndex++;
-            if(patrolIndex > partolLocations.Length)
+            if(patrolIndex >= partolLocations.Length)
             {
                 patrolIndex = 0;
             }
@@ -57,6 +53,4 @@ public class PatrolingEnemy : Character
         }
         timeCount = timeCount + Time.deltaTime;
     }
-
-    
 }

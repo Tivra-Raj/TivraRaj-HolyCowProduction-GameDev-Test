@@ -58,7 +58,7 @@ public class PlayerCharacter : Character
         for(int i=0;i<children;i++)
         {
             Transform child = healthUI.transform.GetChild(i);
-            if (i < this.health)
+            if (i < health)
             {
                 child.gameObject.SetActive(true);
             }

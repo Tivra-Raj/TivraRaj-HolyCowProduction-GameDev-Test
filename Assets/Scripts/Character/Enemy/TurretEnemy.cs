@@ -12,7 +12,7 @@ public class TurretEnemy : Character
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }
