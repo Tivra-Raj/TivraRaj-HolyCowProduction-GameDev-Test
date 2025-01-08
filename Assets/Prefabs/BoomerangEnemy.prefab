@@ -134,7 +134,7 @@ MonoBehaviour:
   canFire: 1
   endPosition: {fileID: 343333065665750452}
   moveSpeed: 2
-  rotateSpeed: 0
+  rotateSpeed: 2
 --- !u!58 &3833919147103348129
 CircleCollider2D:
   m_ObjectHideFlags: 0

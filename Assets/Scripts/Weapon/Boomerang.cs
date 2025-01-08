@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Boomerang : Weapon
@@ -73,8 +72,11 @@ public class Boomerang : Weapon
             {
                 isReverse = true;
             }
-
         }
+
+        ///I have made first boomerang rotate in hierarchy using animator please notice it///
+        transform.Rotate(0, 0, rotateSpeed);
+
         timeCount = timeCount + Time.deltaTime;
     }
     IEnumerator ApplyCoolDown()
