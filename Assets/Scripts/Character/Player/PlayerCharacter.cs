@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerCharacter : Character
 {
@@ -33,7 +34,7 @@ public class PlayerCharacter : Character
     bool canDash = true;
     bool isDashing = false;
     bool isPulsing=false;
-    private int health = 1;
+    //private int health = 1;
 
     public override void Start()
     {
@@ -58,6 +59,7 @@ public class PlayerCharacter : Character
         for(int i=0;i<children;i++)
         {
             Transform child = healthUI.transform.GetChild(i);
+
             if (i < health)
             {
                 child.gameObject.SetActive(true);
@@ -139,6 +141,7 @@ public class PlayerCharacter : Character
     public override void ApplyDamage(int damage)
     {
         //TODO Player takes damage audio
+        Debug.Log("player got hit");
         base.ApplyDamage(damage);
         UpdateHealthUI(currentHP);
         if(!isPulsing)

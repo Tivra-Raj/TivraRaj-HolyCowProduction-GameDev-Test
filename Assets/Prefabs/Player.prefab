@@ -787,13 +787,14 @@ MonoBehaviour:
   weapon: {fileID: 0}
   shootpoint: {fileID: 797884764107617314}
   offset: -90
-  rigidbody: {fileID: 5968096884476073593}
+  playerRigidbody: {fileID: 0}
   dashSpeed: 120
   dashCoolDown: 0.5
   dashTime: 0.2
   healthUI: {fileID: 3726663502679829208}
   playerSprite: {fileID: 6447073946345205423}
   trail: {fileID: 1003550627707025102}
+  canMove: 1
 --- !u!58 &5542885067290108686
 CircleCollider2D:
   m_ObjectHideFlags: 0
