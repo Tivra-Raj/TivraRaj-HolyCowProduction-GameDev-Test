@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
         if (collision.collider.CompareTag(Constants.playerTag))
         {
             Debug.Log("hitting player");
-            collision.gameObject.GetComponent<Character>().ApplyDamage(1);
+            collision.gameObject.GetComponent<Character>().ApplyDamage(0.5f);
         }
         Destroy(gameObject);
     }

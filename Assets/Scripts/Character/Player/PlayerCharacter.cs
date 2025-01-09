@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerCharacter : Character
@@ -23,6 +20,8 @@ public class PlayerCharacter : Character
     SpriteRenderer playerSprite;
     [SerializeField]
     TrailRenderer trail;
+
+    [SerializeField] private Image[] heart;
 
     float horizontalMovement;
     float verticalMovement;
@@ -53,13 +52,19 @@ public class PlayerCharacter : Character
         }
     }
 
-    private void UpdateHealthUI(int health)
+    private void UpdateHealthUI(float health)
     {
         int children = healthUI.transform.childCount;
-        for(int i=0;i<children;i++)
+
+        for (int i = 0; i < heart.Length; i++)
+        {
+            float heartValue = Mathf.Clamp(health - i, 0, 1);
+            heart[i].fillAmount = heartValue;
+        }
+
+        for (int i = 0; i < children; i++)
         {
             Transform child = healthUI.transform.GetChild(i);
-
             if (i < health)
             {
                 child.gameObject.SetActive(true);
@@ -138,7 +143,7 @@ public class PlayerCharacter : Character
         Gizmos.DrawSphere(shootpoint.position, attackRange);
     }
 
-    public override void ApplyDamage(int damage)
+    public override void ApplyDamage(float damage)
     {
         //TODO Player takes damage audio
         Debug.Log("player got hit");
@@ -177,7 +182,7 @@ public class PlayerCharacter : Character
         //Knockback
         if (collision.collider.CompareTag(Constants.patrolTag))
         {
-            ApplyDamage(1);
+            ApplyDamage(0.5f);
         }
     }
 

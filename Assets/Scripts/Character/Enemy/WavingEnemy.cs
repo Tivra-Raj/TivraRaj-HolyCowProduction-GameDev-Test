@@ -61,7 +61,7 @@ public class WavingEnemy : Character
     {
         if (collision.collider.CompareTag(Constants.playerTag))
         {
-            collision.gameObject.GetComponent<Character>().ApplyDamage(1);
+            collision.gameObject.GetComponent<Character>().ApplyDamage(0.5f);
         }
     }
 

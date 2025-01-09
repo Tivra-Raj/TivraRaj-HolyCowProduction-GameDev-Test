@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c56c636a726a34e834d7c9f6e09d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0.5
   coolDown: 2
   canFire: 1
   numberOfBullets: 10

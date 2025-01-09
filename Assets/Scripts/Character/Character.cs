@@ -18,16 +18,17 @@ public class Character : MonoBehaviour
     [SerializeField]
     protected Transform shootpoint;
 
-    protected int currentHP;
+    protected float currentHP;
 
     public virtual void Start()
     {
         currentHP = MaxHP;
     }
-    public virtual void ApplyDamage(int damage)
+    public virtual void ApplyDamage(float damage)
     {
         currentHP -= damage;
-        if(currentHP <= 0)
+        currentHP = Mathf.Clamp(currentHP, 0, MaxHP);
+        if (currentHP <= 0)
         {
             Die();
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField]
-    protected int damage;
+    protected float damage;
     [SerializeField]
     protected float coolDown;
     

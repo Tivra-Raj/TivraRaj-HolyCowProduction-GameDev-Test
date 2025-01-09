@@ -74,7 +74,7 @@ public class Boomerang : Weapon
             }
         }
 
-        ///I have made first boomerang rotate in hierarchy using animator please notice it///
+        ///I have made "first" boomerang present in hierarchy rotate using animator please notice it///
         transform.Rotate(0, 0, rotateSpeed);
 
         timeCount = timeCount + Time.deltaTime;
@@ -88,7 +88,7 @@ public class Boomerang : Weapon
     {
         if (collision.collider.CompareTag(Constants.playerTag))
         {
-            collision.gameObject.GetComponent<Character>().ApplyDamage(1);
+            collision.gameObject.GetComponent<Character>().ApplyDamage(0.5f);
         }
     }
 }

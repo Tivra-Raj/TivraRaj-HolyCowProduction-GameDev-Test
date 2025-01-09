@@ -14,11 +14,11 @@ public class DamaingEnemy : Character
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag(Constants.playerTag))
         {
-            collision.gameObject.GetComponent<Character>().ApplyDamage(1);
+            collision.gameObject.GetComponent<Character>().ApplyDamage(0.5f);
         }
     }
 }
